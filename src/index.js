@@ -1,3 +1,5 @@
+import { fetchResturantData } from "./fetch-data.js";
 import "./styles.css";
-import { greeting } from "./test.js";
 
+
+fetchResturantData("")

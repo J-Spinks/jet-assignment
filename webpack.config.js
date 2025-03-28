@@ -12,6 +12,17 @@ module.exports = {
   devtool: "eval-source-map",
   devServer: {
     watchFiles: ["./src/template.html"],
+    proxy: [
+      {
+        context: ['/api'],
+        target: "https://uk.api.just-eat.io",
+        changeOrigin: true,
+        pathRewrite: {
+          "^/api": "/discovery/uk/restaurants/enriched/bypostcode",
+        },
+        secure: false, 
+      },
+    ],
   },
   plugins: [
     new HtmlWebpackPlugin({
