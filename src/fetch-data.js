@@ -9,9 +9,9 @@ export async function fetchResturantData(postcode) {
     const restaurants = rawData.restaurants;
 
     const cuisines = restaurants.map((restaurant) => restaurant.cuisines[0]);
-    const filteredCuines = cuisines.filter((cuisine) => cuisine.uniqueName !== "groceries");
+    const filteredCuisines = cuisines.filter((cuisine) => cuisine.uniqueName !== "groceries");
 
-    console.log(filteredCuines)
+    console.log(filteredCuisines)
 
   } catch (error) {
     console.error(error, "Data not found")
