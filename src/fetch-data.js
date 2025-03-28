@@ -8,7 +8,10 @@ export async function fetchResturantData(postcode) {
     const rawData = await response.json();
     const restaurants = rawData.restaurants;
 
-    console.log(restaurants)
+    const cuisines = restaurants.map((restaurant) => restaurant.cuisines[0]);
+    const filteredCuines = cuisines.filter((cuisine) => cuisine.uniqueName !== "groceries");
+
+    console.log(filteredCuines)
 
   } catch (error) {
     console.error(error, "Data not found")
