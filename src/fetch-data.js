@@ -1,4 +1,5 @@
-export async function fetchResturantData(postcode) {
+// init function with default parameter
+export async function fetchResturantData(postcode = "PO302HA") {
   try {
     const response = await fetch(`/api/${postcode}`);
 
@@ -8,10 +9,12 @@ export async function fetchResturantData(postcode) {
     const rawData = await response.json();
     const restaurants = rawData.restaurants;
 
-    const cuisines = restaurants.map((restaurant) => restaurant.cuisines[0]);
-    const filteredCuisines = cuisines.filter((cuisine) => cuisine.uniqueName !== "groceries");
-
-    console.log(filteredCuisines)
+    // Updated filter returns only restaurants, not shops that have groceries
+    const filteredRestaurants = restaurants.filter(restaurant =>
+      !restaurant.cuisines.some((cuisine) =>
+        ["groceries", "electronics"].includes(cuisine.uniqueName))
+    )
+    console.log(filteredRestaurants)
 
   } catch (error) {
     console.error(error, "Data not found")
