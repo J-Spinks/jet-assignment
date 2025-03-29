@@ -1,4 +1,4 @@
-// init function with default parameter
+/* Initialised function with isle of wight postcode to reduce returned data form API*/
 export async function fetchResturantData(postcode = "PO302HA") {
   try {
     const response = await fetch(`/api/${postcode}`);
@@ -13,11 +13,29 @@ export async function fetchResturantData(postcode = "PO302HA") {
     const filteredRestaurants = restaurants.filter(restaurant =>
       !restaurant.cuisines.some((cuisine) =>
         ["groceries", "electronics"].includes(cuisine.uniqueName))
-    )
-    console.log(filteredRestaurants)
+    );
+
+    return filteredRestaurants;
 
   } catch (error) {
     console.error(error, "Data not found")
     return null
   }
+}
+
+export async function buildResturantObj(postcode = "PO302HA") {
+  const restaurants = await fetchResturantData(postcode);
+
+  const data = [];
+
+  for (let i = 0; i < restaurants.length; i++){
+    data.push({
+      "name": restaurants[i].name,
+      "address": restaurants[i].address,
+      "cuisines": restaurants[i].cuisines,
+      "rating": restaurants[i].rating
+    });
+  }
+
+  return data;
 }
