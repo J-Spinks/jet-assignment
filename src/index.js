@@ -1,5 +1,5 @@
 // import { fetchResturantData, constructResturantObj} from "./fetch-data.js";
-import { generateRestaurantCards} from "./user-interface";
+import {generateRestaurantCards, getPostcode} from "./user-interface";
 import "./styles.css";
 
 
@@ -7,4 +7,6 @@ import "./styles.css";
 
 // restaurants.forEach(restaurant => console.log(restaurant))
 
-generateRestaurantCards()
+// generateRestaurantCards();
+// const postcode = await getPostcode()
+// generateRestaurantCards(postcode);

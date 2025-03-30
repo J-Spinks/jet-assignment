@@ -1,14 +1,31 @@
 import {constructResturantObj} from "./fetch-data.js";
 
-export async function generateRestaurantCards() {
-  const restaurants = await constructResturantObj();
+export async function getPostcode() {
+  return new Promise((resolve) => {
+    const submitBtn = document.getElementById("submit-btn");
+    submitBtn.addEventListener("click", async (e) => {
+      e.preventDefault();
+      let postcodeInput = document.getElementById("postcode-input");
+      let postcodeInputValue = postcodeInput.value
+      resolve(postcodeInputValue);
+
+      postcodeInput.value = "";
+
+      while (true) {
+        const postcode = await getPostcode();
+        console.log("Postcode entered:", postcode);
+      }
+    })
+  })
+}
+
+export async function generateRestaurantCards(postcode) {
+  const restaurants = await constructResturantObj(postcode);
   const contentDiv = document.getElementById("content");
 
   // hardcoded to 10 results, as per challenge instruction.
   // Suggest this is for loop to include to i < resturants.length to include full list of results
   for (let i = 0; i < 10; i++){
-
-    console.log(restaurants[i]);
     const restaurantCard = document.createElement("div");
     restaurantCard.id = "restaurant-card";
 
@@ -41,7 +58,6 @@ export async function generateRestaurantCards() {
 
     restaurantCard.appendChild(cardContent);
     contentDiv.appendChild(restaurantCard);
-
 
   }
 }
