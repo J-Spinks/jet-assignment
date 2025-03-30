@@ -32,6 +32,9 @@ export async function generateRestaurantCards(postcode) {
     const cardContent = document.createElement("div");
     cardContent.id = "card-content";
 
+    let imgPlaceholder = document.createElement("img");
+    imgPlaceholder.src = "https://www.just-eat.co.uk/consumer-web/images/just-eat-brand.30f1ebe5.svg";
+
     const restaurantNameDiv = document.createElement("p");
     const restaurantAddressDiv = document.createElement("p");
     const restaurantDetailsDiv = document.createElement("p");
@@ -46,7 +49,7 @@ export async function generateRestaurantCards(postcode) {
 
     restaurantNameDiv.textContent = restaurants[i].name;
     restaurantAddressDiv.textContent = `${restaurants[i].address.city}, ${restaurants[i].address.firstLine}`;
-    restaurantRatingDiv.textContent = `${restaurants[i].rating.starRating}⭐️`
+    restaurantRatingDiv.textContent = `⭐️ ${restaurants[i].rating.starRating}`
     restaurantCuisinesDiv.textContent = `${restaurants[i].cuisines[0].name}, ${restaurants[i].cuisines[1].name} `
 
 
@@ -56,6 +59,7 @@ export async function generateRestaurantCards(postcode) {
     restaurantDetailsDiv.appendChild(restaurantRatingDiv);
     restaurantDetailsDiv.appendChild(restaurantCuisinesDiv);
 
+    restaurantCard.appendChild(imgPlaceholder);
     restaurantCard.appendChild(cardContent);
     contentDiv.appendChild(restaurantCard);
 

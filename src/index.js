@@ -7,6 +7,6 @@ import "./styles.css";
 
 // restaurants.forEach(restaurant => console.log(restaurant))
 
-// generateRestaurantCards();
+generateRestaurantCards();
 // const postcode = await getPostcode()
 // generateRestaurantCards(postcode);
