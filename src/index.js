@@ -1,7 +1,7 @@
-import { fetchResturantData, buildResturantObj} from "./fetch-data.js";
+import { fetchResturantData, constructResturantObj} from "./fetch-data.js";
 import "./styles.css";
 
 
-const restaurants = await buildResturantObj()
+const restaurants = await constructResturantObj()
 
 restaurants.forEach(restaurant => console.log(restaurant))
