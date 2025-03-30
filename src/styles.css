@@ -24,19 +24,57 @@ header img {
   align-items: center;
 }
 
+#search-container h3,
+#search-container p,
+#search-container form {
+  margin: 5px 0;
+}
+
 #search-container {
   margin-top: 10px;
   padding: 20px;
-  text-align: center;
+  /* text-align: center; */
   margin-bottom: 10px;
   display: flex;
   flex-direction: column;
-  align-items: center;
+  /* align-items: center; */
   background: white;
   padding: 20px;
   border-radius: 8px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
   width: 500px;
+}
+
+.search-bar {
+  position: relative;
+  width: 400px;
+}
+
+.search-bar #postcode-input {
+  width: 100%;
+  outline: none;
+  border: 1px solid #0b0b0b;
+  border-radius: 20px;
+  padding-right: 40px;
+  padding: 6px;
+}
+
+.search-bar #submit-btn {
+  position: absolute;
+  right: -9px;
+  top: 50%;
+  transform: translateY(-51%);
+  border: none;
+  background-color: #f36805;
+  color: white;
+  border-radius: 20px;
+  padding: 4px 10px;
+  cursor: pointer;
+  padding-top: 3px;
+}
+
+#submit-btn:hover {
+  background-color: #fe6b02;
 }
 
 #restaurant-card {
