@@ -1,29 +1,14 @@
 import {constructResturantObj} from "./fetch-data.js";
 
-export async function getPostcode() {
-  return new Promise((resolve) => {
-    const submitBtn = document.getElementById("submit-btn");
-    submitBtn.addEventListener("click", async (e) => {
-      e.preventDefault();
-      let postcodeInput = document.getElementById("postcode-input");
-      let postcodeInputValue = postcodeInput.value
-      resolve(postcodeInputValue);
 
-      postcodeInput.value = "";
-
-      while (true) {
-        const postcode = await getPostcode();
-        console.log("Postcode entered:", postcode);
-      }
-    })
-  })
-}
-
-export async function generateRestaurantCards(postcode) {
+async function generateRestaurantCards(postcode) {
   const restaurants = await constructResturantObj(postcode);
-  const contentDiv = document.getElementById("content");
+  const restaurantsCardContainer = document.getElementById("restaurants-card-container");
 
-  // hardcoded to 10 results, as per challenge instruction.
+  restaurantsCardContainer.innerHTML = "";
+
+
+  // Hardcoded to 10 results, as per challenge instruction.
   // Suggest this is for loop to include to i < resturants.length to include full list of results
   for (let i = 0; i < 10; i++){
     const restaurantCard = document.createElement("div");
@@ -61,7 +46,29 @@ export async function generateRestaurantCards(postcode) {
 
     restaurantCard.appendChild(imgPlaceholder);
     restaurantCard.appendChild(cardContent);
-    contentDiv.appendChild(restaurantCard);
+    restaurantsCardContainer.appendChild(restaurantCard);
 
   }
+}
+
+export async function generatePostcodeResults() {
+  const form = document.getElementById("postcode-form");
+  const postcodeInput = document.getElementById("postcode-input");
+
+  form.addEventListener("submit", async (e) => {
+    e.preventDefault();
+
+    let postcode = postcodeInput.value.trim();
+    if (!postcode) {
+      alert("Please enter a valid postcode");
+      return;
+    }
+
+    const contentDiv = document.getElementById("restaurants-card-container");
+    contentDiv.innerHTML = "";
+
+    await generateRestaurantCards(postcode);
+
+    postcodeInput.value = "";
+  });
 }
