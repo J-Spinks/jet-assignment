@@ -7,7 +7,6 @@ async function generateRestaurantCards(postcode) {
 
   restaurantsCardContainer.innerHTML = "";
 
-
   // Hardcoded to 10 results, as per challenge instruction.
   // Suggest this is for loop to include to i < resturants.length to include full list of results
   for (let i = 0; i < 10; i++){

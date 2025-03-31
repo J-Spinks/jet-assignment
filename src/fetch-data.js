@@ -26,11 +26,11 @@ export async function fetchResturantData(postcode = "PO302HA") {
 export async function constructResturantObj(postcode = "PO302HA") {
   const restaurants = await fetchResturantData(postcode);
 
-  // add logoURL and call this API - is this possible within scope of task? 
-
+  // add logoURL and call this API - is this possible within scope of task?
   const data = [];
 
-  for (let i = 0; i < restaurants.length; i++){
+  // Hardcoded to 10 results, as per challenge instruction.
+  for (let i = 0; i < 10; i++){
     data.push({
       "name": restaurants[i].name,
       "address": restaurants[i].address,
