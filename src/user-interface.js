@@ -18,7 +18,7 @@ async function generateRestaurantCards(postcode) {
     cardContent.id = "card-content";
 
     let imgPlaceholder = document.createElement("img");
-    imgPlaceholder.src = "https://www.just-eat.co.uk/consumer-web/images/just-eat-brand.30f1ebe5.svg";
+    imgPlaceholder.src = "https://www.svgrepo.com/show/399602/restaurant.svg";
 
     const restaurantNameDiv = document.createElement("p");
     const restaurantAddressDiv = document.createElement("p");
