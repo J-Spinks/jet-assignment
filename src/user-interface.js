@@ -16,8 +16,9 @@ async function generateRestaurantCards(postcode) {
     const cardContent = document.createElement("div");
     cardContent.id = "card-content";
 
-    let imgPlaceholder = document.createElement("img");
-    imgPlaceholder.src = "https://www.svgrepo.com/show/399602/restaurant.svg";
+    let restaurantLogo = document.createElement("img");
+    // imgPlaceholder.src = "https://www.svgrepo.com/show/399602/restaurant.svg";
+    restaurantLogo.src = restaurants[i].logoUrl;
 
     const restaurantNameDiv = document.createElement("p");
     const restaurantAddressDiv = document.createElement("p");
@@ -43,7 +44,7 @@ async function generateRestaurantCards(postcode) {
     restaurantDetailsDiv.appendChild(restaurantRatingDiv);
     restaurantDetailsDiv.appendChild(restaurantCuisinesDiv);
 
-    restaurantCard.appendChild(imgPlaceholder);
+    restaurantCard.appendChild(restaurantLogo);
     restaurantCard.appendChild(cardContent);
     restaurantsCardContainer.appendChild(restaurantCard);
 

@@ -35,7 +35,8 @@ export async function constructResturantObj(postcode = "PO302HA") {
       "name": restaurants[i].name,
       "address": restaurants[i].address,
       "cuisines": restaurants[i].cuisines,
-      "rating": restaurants[i].rating
+      "rating": restaurants[i].rating,
+      "logoUrl": restaurants[i].logoUrl
     });
   }
 
