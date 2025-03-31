@@ -59,7 +59,10 @@ export async function generatePostcodeResults() {
     e.preventDefault();
 
     let postcode = postcodeInput.value.trim();
-    if (!postcode) {
+
+    // prevents empty submission or a postcodes that is too short
+    // shortest postcode in the UK is 5 characters
+    if (!postcode || postcode.length < 5) {
       alert("Please enter a valid postcode");
       return;
     }
