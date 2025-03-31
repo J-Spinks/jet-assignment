@@ -49,7 +49,7 @@ If you encounter any dependency-related errors, try reinstalling the required pa
 This ensures that all necessary Webpack-related packages are installed.
 
 ## Technology Stack analysis
-This Project utilises Node.js and Webpack modules for efficient API handling.
+This Project utilises [Node.js] and Webpack modules for efficient API handling.
 
 ### **Node.js**
 [Node.js] is a JavaScript runtime environment that allows you to run JavaScript outside of your web browser. It is well suited for working with APIs because it Can efficiently  handle asynchronous tasks without blocking other operations.
