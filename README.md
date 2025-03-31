@@ -21,16 +21,16 @@ Clone this Project using Git and by using the following command:
 
 Then navigate to the project directory.
 
-If not using Git, a copy the Project can be downloaded via .zip file on GitHub by following the https link above.
+Alternatively, a clone of the Project can be downloaded via .zip file on GitHub by following the https link above.
 
 
 ### **Install dependencies**
 Once the repository has been cloned, run the following command to install all
-necessary packages and dependencies specified in the package.json:
+necessary packages and dependencies:
 
     `npm install`
 
-### **Build**
+### **Bundle packages**
 To bundle the project, run:
 
     `npx webpack`
@@ -48,7 +48,7 @@ If you encounter any dependency-related errors, try reinstalling the required pa
 
     `npm install --save-dev webpack webpack-cli webpack-dev-server html-webpack-plugin style-loader css-loader`
 
-Then rebudle the project by running:
+Then rebundle the project by running:
 
     `npx webpack`
 
@@ -56,11 +56,11 @@ This ensures that all necessary Webpack-related packages are installed. You can 
 
 For any further installation issues please contact the author. Details found below in ## Contact.
 
-## Technology Stack analysis
+## Technology Stack
 This Project utilises [Node.js] and Webpack modules for efficient API handling.
 
 ### **Node.js**
-[Node.js] is a JavaScript runtime environment that allows you to run JavaScript outside of your web browser. It is well suited for working with APIs because it Can efficiently  handle asynchronous tasks without blocking other operations.
+[Node.js] is a JavaScript runtime environment that allows JavaScript to run outside of the web browser. It is therefore well suited for working with APIs because it can efficiently  handle asynchronous tasks without blocking other operations.
 
 ### **Webpack**
 Webpack is one of the most popular JavaScript bundlers and includes features that enhance API handling.
@@ -73,19 +73,20 @@ The following Webpack features have been utilised in this Project:
 
 
 ## Project Assumptions
-1. The challenge brief states that four data points are should be displayed: Name, Cuisines, Rating (as a number), and Address. As the API provides an extract of the JET restaurant database, it is assumed that the JET coding challenge aims to simulate a real-world work task for this challenge. Therefore, This Project solution presents the data in a format similar to that found on the JET website.
+1. The challenge brief states that four data points should be displayed: Name, Cuisines, Rating (as a number), and Address. As the API provided for the challenge is an extract of the JET database, it is assumed that the coding challenge is intended to simulate a realistic work task for junior developers at JET. Therefore, the Project solution presents the data in a format similar to that found on the JET website.
 
-2. In alignment with Assumption 1, and to align with the card formate use by JET, a placeholder image has been included. While this is not explicitly required by the challenge, it has been assumed that incorporating this element enhances the visual consistency with the JET platform.
+2. In alignment with Assumption 1, and to align with the card formate use by JET, a placeholder image has been included. While this is not explicitly required by the challenge, it has been assumed that incorporating this logo element enhances the visual consistency with the JET platform.
 
 3. This solution allows users to request restaurant information from the JET API by submitting a postcode. It is assumed that the reviewer expects a dynamic solution where multiple postcode searches can be performed rather than a single static request.
 
-4. It is assumed that the project will be accessed via a laptop or desktop with a larger screen. Therefore UI within this project has not currently optimised for smaller screens.
+4. It is assumed that the project will be accessed via a laptop or desktop with a larger screen. Therefore the UI within this project has not currently optimised for smaller screens.
 
 ## Future Improvements
 
 1. Optimise API request: There is a noticeable delay when retrieving API results. Future iterations of this project should focus on optimising API calls to improve response time. Possible enhancements include:
   - Reducing the API Call Size: Investigating the amount of data being returned and limiting it to only the essential fields.
   - Optimising the Webpack Proxy in Development: Exploring methods such as data compression or caching to speed up responses.
+  
 2. Improve the UI experience: As listed within assumption 4, the this project has not optimised the UI for smaller devices. Optimising the UI for different screen sizes is essential for ensuring a seamless and user-friendly experience across device types and should be prioritised upon any update.
 
 ## Contact
